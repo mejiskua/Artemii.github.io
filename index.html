@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация сердца и молний</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .canvas-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #particles {
+            z-index: 1;
+        }
+        #lightning-canvas {
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100vw;
+            height: 100vh;
+        }
+        .magic-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: transparent;
+            color: #ff4d88;
+            border: 2px solid #ff4d88;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            margin-top: 20px;
+            position: relative;
+        }
+        .magic-button:hover {
+            color: white;
+            background: #ff4d88;
+            box-shadow: 0 0 20px #ff4d88;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="particles"></canvas>
+    </div>
+    <button class="magic-button">Нажми</button>
+    <canvas id="lightning-canvas"></canvas>
+    
+    <script src="particles.js"></script>
+    <script src="lightning.js"></script>
+</body>
+</html>
